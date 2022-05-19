@@ -1,12 +1,14 @@
 var portfolioData = {
-  "NiagaraFalls": {
+  "niagara": {
     "Title": "Niagara Falls",
-    "Description": "A post-graduation field trip with my family",
-    "Images": [
-      "assets/img/portfolio/1/img1.jpg",
-      "assets/img/portfolio/1/img2.jpg",
-      "assets/img/portfolio/1/img3.jpg"
-    ]
+    "Description": "A post-graduation road trip with my family",
+    "Images": 3,
+  },
+
+  "seaport": {
+    "Title": "Arboretum -> Seaport",
+    "Description": "A summertime day trip with friends to explore Boston",
+    "Images": 8,
   }
 };
 
@@ -17,8 +19,9 @@ function loadPortfolio(portName)
 		$('#portfolio-image-holder').empty();
 		$('#portfolio-page-name').text(portfolioData[portName]["Title"]);
 		$('#portfolio-page-description').text(portfolioData[portName]["Description"]);
-		$.each(portfolioData[portName]["Images"], function(){
-	    	$('#portfolio-image-holder').append('<img class="mb-4" src="' + this + '" />'); 
-		});
+		for (let imgCount = 1; imgCount <= portfolioData[portName]["Images"]; imgCount++)
+		{
+			$('#portfolio-image-holder').append('<img class="mb-4" src="assets/img/portfolio/' + portName + '/img' + imgCount + '.jpg" />');
+		}
 	}
 }
