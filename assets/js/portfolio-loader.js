@@ -59,6 +59,12 @@ var portfolioData = {
     "Description": "300mm, f/5.6, 2.5s, ISO 400 | 80mm, f/5.6, 5s, ISO 400",
     "Images": 2,
   },
+  "portland1": {
+    "Title": "Portland, ME",
+    "Year": 2019,
+    "Description": "My very first trip to Portland, done by car",
+    "Images": 8,
+  },
   "colorado": {
     "Title": "Trip to Colorado",
     "Year": 2020,
@@ -81,6 +87,12 @@ var portfolioData = {
     "Title": "Downtown Boston Walk",
     "Year": 2020,
     "Description": "I'd like to think that the cat's name is Ferdinand",
+    "Images": 6,
+  },
+  "arboretum2020": {
+    "Title": "Arnorld Arboretum",
+    "Year": 2020,
+    "Description": "A refrain for spring",
     "Images": 6,
   }
 };
