@@ -276,13 +276,32 @@ function skills() {
 /*-------------------------
          Count up
 -------------------------*/
-function countUp() {
-
+function countUpExec() {
     "use strict";
-
     $('.timer').countTo();
     $('.count-number').removeClass('timer');
+}
 
+const onCounterSpotted = (entries, observer) => {
+    for (const { isIntersecting, target } of entries)
+    {
+        if (isIntersecting) {
+          countUpExec();
+          observer.unobserve(target);
+        }
+    }
+}
+
+function countUp() {
+    const countUpElement = document.getElementById('count-up');
+    const countObserverOptions = {
+      root: null,
+      rootMargin: '0px 0px',
+      threshold: [0]
+    };
+
+    const countObserver = new IntersectionObserver(onCounterSpotted, countObserverOptions);
+    countObserver.observe(countUpElement);
 }
 /*-------------------------
      MAGNIFIC POPUP JS
